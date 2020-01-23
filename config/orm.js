@@ -21,6 +21,7 @@ function printQuestionMarks(num) {
 // The ? signs are for swapping out other values
 // These help avoid SQL injection
 // https://en.wikipedia.org/wiki/SQL_injection
+
 var orm = {
     // Creating the method to retrieve all of the burgers (and the rest of the data) from the database
     selectAll: function (table, cb) {
@@ -30,6 +31,7 @@ var orm = {
                 throw err;
             }
             cb(result);
+            console.log(result);
         });
     },
     // Creating the method to insert a new burger

@@ -1,5 +1,5 @@
 // creates function to render index
-const render = function () {
+const render = function (uneatenBurgers) {
 
 	return `
 
@@ -16,6 +16,44 @@ const render = function () {
         </div>
     </div>
     </body>
+
+	<div class="row">
+	<div class="col-md-2">
+	</div>
+
+	<div class="col-md-5 uneaten-list">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="panel panel-default">
+							<div class="burger-text panel-body">
+								${uneatenBurgers}
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<form action="/{{this.id}}?_method=PUT" method="POST">
+							  <input type="hidden" name="devoured" value="true">
+							  <button type="submit" class="burger-btn btn btn-success">Devour it!</button>
+						</form>
+					</div>
+				</div>
+
+	</div>
+
+	<div class="col-md-3 eaten-list">
+
+				<div class="panel panel-default">
+					<div class="burger-text panel-body" id="devoured-text">
+						
+					</div>
+				</div>
+
+	</div>
+
+	<div class="col-md-2">
+	</div>
+</div>
 
     <div class="row">
         <div class="col-md-3">
