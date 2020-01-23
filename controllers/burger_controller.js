@@ -2,7 +2,7 @@ var express = require("express");
 
 var burger = require("../models/burger.js");
 
-var index = require("../views/index.js");
+const index = require("../views/index.js");
 
 
 var router = express.Router();
@@ -10,7 +10,7 @@ var router = express.Router();
 
 router.get("/", function (req, res) {
 
-    res.render(index.render());
+    res.send(index.render());
 
 });
 
