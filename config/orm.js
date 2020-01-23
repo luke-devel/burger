@@ -23,13 +23,13 @@ function printQuestionMarks(num) {
 // https://en.wikipedia.org/wiki/SQL_injection
 var orm = {
     // Creating the method to retrieve all of the burgers (and the rest of the data) from the database
-    selectAll: function (table) {
+    selectAll: function (table, cb) {
         var queryString = "SELECT * FROM " + table + ";";
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
-            console.log(result);
+            cb(result);
         });
     },
     // Creating the method to insert a new burger
@@ -49,11 +49,11 @@ var orm = {
             if (err) {
                 throw err;
             }
-            console.log(result);
+            cb(result);
         });
     },
     // Creating the method to update the "devoured" boolean in the database
-    updateOne: function (table, objColVals, condition) {
+    updateOne: function (table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
@@ -66,7 +66,7 @@ var orm = {
             if (err) {
                 throw err;
             }
-            console.log(result);
+            cb(result);
         });
     }
 };
