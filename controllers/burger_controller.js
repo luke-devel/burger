@@ -12,8 +12,14 @@ var router = express.Router();
 
 
 router.get("/", function (req, res) {
-
-    res.send(mainLayoutView.render(indexView.render(burger.selectAll)));
+    let newObj;
+    burger.selectAll(function (data) {
+        newObj = {
+            burgers: data
+        };
+        console.log(newObj.burgers[0]);
+    })
+    res.send(mainLayoutView.render(indexView.render()));
 
 });
 

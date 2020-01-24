@@ -1,12 +1,12 @@
 // creates function to render index
 const render = function (uneatenBurgers) {
 
-	return `
+    return `
 
 	<div class=container>
     <div class="row">
         <div class="col-md-12">
-            <img src="/assets/img/burger.png" class="center" id="burger-img" alt="burger" width="450" height="400">
+            <img src="/assets/img/burger.png" class="img-responsive center-block" id="burger-img" alt="burger" width="450" height="400">
         </div>
     </div>
 

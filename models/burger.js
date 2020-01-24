@@ -22,6 +22,6 @@ var burger = {
         });
     }
 }
-
+console.log(burger);
 // exports burger variable with access to funcitons
 module.exports = burger;
